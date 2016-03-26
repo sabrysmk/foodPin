@@ -97,20 +97,17 @@ class RestarauntsTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath:
-//        NSIndexPath) {
-//        
-//        if editingStyle == .Delete {
-//            // Delete the row from the data source
-//            restaurantNames.removeAtIndex(indexPath.row)
-//            restaurantLocations.removeAtIndex(indexPath.row)
-//            restaurantTypes.removeAtIndex(indexPath.row)
-//            restaurantIsVisited.removeAtIndex(indexPath.row)
-//            restaurantImages.removeAtIndex(indexPath.row)
-//        }
-//        tableView.reloadData()
-//    }
-//    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destinationViewController as! RestaurantDetailViewController
+                destinationController.restaurantImage = restaurantImages[indexPath.row]
+                destinationController.restaurantName = restaurantNames[indexPath.row]
+                destinationController.restaurantLocation = restaurantLocations[indexPath.row]
+                destinationController.restaurantType = restaurantTypes[indexPath.row]
+            }
+        }
+    }
     
     // MARK: - Table view delegate
     

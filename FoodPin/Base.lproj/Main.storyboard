@@ -70,7 +70,7 @@
                                     <outlet property="nameLbl" destination="nRV-Bo-tu0" id="Ige-ev-kHx"/>
                                     <outlet property="thumnailImageView" destination="fcU-z9-eOL" id="Ps4-D8-oID"/>
                                     <outlet property="typeLbl" destination="kRx-Lg-rlb" id="d9m-Nk-GpL"/>
-                                    <segue destination="eJQ-EN-amM" kind="show" id="hFD-HM-55A"/>
+                                    <segue destination="eJQ-EN-amM" kind="show" identifier="showRestaurantDetail" id="hFD-HM-55A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="974" y="213"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Detail View Controller-->
         <scene sceneID="szn-eL-zRK">
             <objects>
-                <viewController id="eJQ-EN-amM" sceneMemberID="viewController">
+                <viewController id="eJQ-EN-amM" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cLo-SV-dsT"/>
                         <viewControllerLayoutGuide type="bottom" id="Jyg-oc-Ha5"/>
@@ -100,6 +100,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4go-Id-t9c">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s43-at-Ibg">
+                                <rect key="frame" x="17" y="101" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVl-IM-roy">
+                                <rect key="frame" x="17" y="72" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aB-Mv-jQC">
+                                <rect key="frame" x="17" y="130" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -109,6 +127,12 @@
                             <constraint firstItem="Jyg-oc-Ha5" firstAttribute="top" secondItem="4go-Id-t9c" secondAttribute="bottom" id="tFY-Kw-NPq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="4go-Id-t9c" id="tmR-cZ-hKE"/>
+                        <outlet property="restaurantLocationLbl" destination="s43-at-Ibg" id="V3M-aC-eEW"/>
+                        <outlet property="restaurantNameLbl" destination="dVl-IM-roy" id="pug-c8-xsG"/>
+                        <outlet property="restaurantTypeLbl" destination="5aB-Mv-jQC" id="fm1-Rc-SF9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ps-jp-C0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
