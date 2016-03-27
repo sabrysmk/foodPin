@@ -152,11 +152,28 @@
                                     <outlet property="delegate" destination="eJQ-EN-amM" id="vBH-JS-Ttf"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cuy-0k-Wti">
+                                <rect key="frame" x="533" y="72" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.29411764709999999" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="FLa-Eb-okV"/>
+                                    <constraint firstAttribute="height" constant="40" id="s4w-gE-A4Q"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="rating"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fel-PW-XFG" secondAttribute="trailing" id="5F0-g5-ZiM"/>
+                            <constraint firstItem="Cuy-0k-Wti" firstAttribute="trailing" secondItem="qca-hx-BYz" secondAttribute="trailingMargin" constant="-7" id="Fix-aO-hJs"/>
                             <constraint firstItem="fel-PW-XFG" firstAttribute="leading" secondItem="qca-hx-BYz" secondAttribute="leading" id="Fk9-im-0gD"/>
+                            <constraint firstItem="Cuy-0k-Wti" firstAttribute="top" secondItem="cLo-SV-dsT" secondAttribute="bottom" constant="8" id="IhM-4S-EXb"/>
                             <constraint firstItem="fel-PW-XFG" firstAttribute="top" secondItem="qca-hx-BYz" secondAttribute="top" id="Nry-Gl-qbQ"/>
                             <constraint firstItem="fel-PW-XFG" firstAttribute="top" secondItem="cLo-SV-dsT" secondAttribute="bottom" id="Wtf-ie-l1q"/>
                             <constraint firstItem="Jyg-oc-Ha5" firstAttribute="top" secondItem="fel-PW-XFG" secondAttribute="bottom" id="hfp-E9-L7L"/>
@@ -176,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ps-jp-C0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="213"/>
+            <point key="canvasLocation" x="1644" y="290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3iO-cn-2MM">
@@ -197,4 +214,7 @@
             <point key="canvasLocation" x="162" y="213"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rating" width="256" height="256"/>
+    </resources>
 </document>
