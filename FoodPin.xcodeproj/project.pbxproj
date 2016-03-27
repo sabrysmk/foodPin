@@ -17,6 +17,7 @@
 		1F8804441CA605F4009720B8 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8804431CA605F4009720B8 /* RestaurantDetailViewController.swift */; };
 		1F8804461CA6D4C3009720B8 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8804451CA6D4C3009720B8 /* Restaurant.swift */; };
 		1F8804481CA7314D009720B8 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8804471CA7314D009720B8 /* RestaurantDetailTableViewCell.swift */; };
+		1FE0F8B31CA8998300A8B5E8 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0F8B21CA8998300A8B5E8 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1F8804431CA605F4009720B8 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		1F8804451CA6D4C3009720B8 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		1F8804471CA7314D009720B8 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
+		1FE0F8B21CA8998300A8B5E8 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				1F8804431CA605F4009720B8 /* RestaurantDetailViewController.swift */,
 				1F631D601CA4951800B03757 /* RestaurantTableViewCell.swift */,
 				1F231F3C1CA4472600512A95 /* Main.storyboard */,
+				1FE0F8B21CA8998300A8B5E8 /* ReviewViewController.swift */,
 				1F231F421CA4472600512A95 /* Assets.xcassets */,
 				1F231F441CA4472600512A95 /* LaunchScreen.storyboard */,
 				1F231F471CA4472600512A95 /* Info.plist */,
@@ -157,6 +160,7 @@
 				1F8804441CA605F4009720B8 /* RestaurantDetailViewController.swift in Sources */,
 				1F231F4E1CA447FE00512A95 /* RestarauntsTableViewController.swift in Sources */,
 				1F231F411CA4472600512A95 /* FoodPin.xcdatamodeld in Sources */,
+				1FE0F8B31CA8998300A8B5E8 /* ReviewViewController.swift in Sources */,
 				1F8804481CA7314D009720B8 /* RestaurantDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var restaurantImageView:UIImageView!
     
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var ratingButton:UIButton!
+    
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
     
     var restaurant:Restaurant!
     
