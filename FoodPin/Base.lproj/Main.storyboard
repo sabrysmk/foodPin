@@ -85,6 +85,38 @@
             </objects>
             <point key="canvasLocation" x="974" y="213"/>
         </scene>
+        <!--Map Kit View Controller-->
+        <scene sceneID="PDD-85-gqt">
+            <objects>
+                <viewController id="Qst-Tx-T3m" customClass="MapKitViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5IN-fn-vMX"/>
+                        <viewControllerLayoutGuide type="bottom" id="BnT-wm-EQD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d1r-Om-SwS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xac-EX-rDB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xac-EX-rDB" secondAttribute="trailing" id="SV0-Oq-VNK"/>
+                            <constraint firstItem="xac-EX-rDB" firstAttribute="top" secondItem="d1r-Om-SwS" secondAttribute="top" id="k5t-n3-bJq"/>
+                            <constraint firstItem="xac-EX-rDB" firstAttribute="leading" secondItem="d1r-Om-SwS" secondAttribute="leading" id="kgI-5A-28G"/>
+                            <constraint firstItem="xac-EX-rDB" firstAttribute="bottom" secondItem="BnT-wm-EQD" secondAttribute="top" id="zdX-xG-GhU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="xac-EX-rDB" id="HEL-K5-iKP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfb-wB-A6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1652" y="-464"/>
+        </scene>
         <!--Restaurant Detail View Controller-->
         <scene sceneID="szn-eL-zRK">
             <objects>
@@ -170,6 +202,24 @@
                                     <segue destination="Ose-Bm-xLd" kind="presentation" identifier="showReview" id="h8I-ml-dnf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iS-wu-PgK">
+                                <rect key="frame" x="533" y="120" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.93934428690000005" green="0.28993204239999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="HAG-Je-dGO"/>
+                                    <constraint firstAttribute="height" constant="40" id="zoa-KX-LG9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="map"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Qst-Tx-T3m" kind="show" identifier="showMap" id="XHx-1r-eGd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -181,6 +231,8 @@
                             <constraint firstItem="fel-PW-XFG" firstAttribute="top" secondItem="cLo-SV-dsT" secondAttribute="bottom" id="Wtf-ie-l1q"/>
                             <constraint firstItem="Jyg-oc-Ha5" firstAttribute="top" secondItem="fel-PW-XFG" secondAttribute="bottom" id="hfp-E9-L7L"/>
                             <constraint firstItem="Jyg-oc-Ha5" firstAttribute="top" secondItem="fel-PW-XFG" secondAttribute="bottom" id="ute-9I-PUZ"/>
+                            <constraint firstItem="4iS-wu-PgK" firstAttribute="top" secondItem="Cuy-0k-Wti" secondAttribute="bottom" constant="8" id="zl5-0h-JmS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4iS-wu-PgK" secondAttribute="trailing" constant="7" id="zxp-F6-vH5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -359,6 +411,7 @@
         <image name="dislike" width="84" height="84"/>
         <image name="good" width="256" height="256"/>
         <image name="great" width="256" height="256"/>
+        <image name="map" width="48" height="48"/>
         <image name="rating" width="256" height="256"/>
     </resources>
 </document>
