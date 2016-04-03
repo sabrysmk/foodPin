@@ -1,20 +1,11 @@
-//
-//  RestaurantTableViewCell.swift
-//  FoodPin
-//
-//  Created by Александр Сабри on 25/03/16.
-//  Copyright © 2016 Александр Сабри. All rights reserved.
-//
-
 import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var typeLabel: UILabel!
+    @IBOutlet var thumbnailImageView: UIImageView!
     
-    @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var locationLbl: UILabel!
-    @IBOutlet weak var typeLbl: UILabel!
-    @IBOutlet weak var thumnailImageView: UIImageView!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +13,8 @@ class RestaurantTableViewCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
+
 }

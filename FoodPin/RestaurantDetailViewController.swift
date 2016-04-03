@@ -1,33 +1,19 @@
-//
-//  RestaurantDetailViewController.swift
-//  FoodPin
-//
-//  Created by Александр Сабри on 26/03/16.
-//  Copyright © 2016 Александр Сабри. All rights reserved.
-//
-
 import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var restaurantImageView:UIImageView!
     
     @IBOutlet var tableView:UITableView!
+    
     @IBOutlet var ratingButton:UIButton!
     
-    @IBAction func close(segue:UIStoryboardSegue) {
-        
-    }
-    
     var restaurant:Restaurant!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Enable self sizing cell
-        tableView.estimatedRowHeight = 36.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
+
         // Do any additional setup after loading the view.
-        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantImageView.image = UIImage(data: restaurant.image!)
         
         // Change the color of the table view
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
@@ -41,8 +27,17 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Set the title of the navigation bar
         title = restaurant.name
         
+        // Enable self sizing cells
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+
+        // Set the rating of the restaurant
+        if let rating = restaurant.rating where rating != "" {
+            ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+        }
+        
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -53,13 +48,6 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "showMap" {
-            let destinationController = segue.destinationViewController as! MapKitViewController
-            destinationController.restaurant = restaurant
-        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,7 +73,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phoneNumber
         case 4:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
+            if let isVisited = restaurant.isVisited?.boolValue {
+                cell.valueLabel.text = isVisited ? "Yes, I've been here before" : "No"
+            }
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
@@ -94,5 +84,37 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         cell.backgroundColor = UIColor.clearColor()
         
         return cell
-}
+    }
+    
+
+    @IBAction func close(segue:UIStoryboardSegue) {
+        if let reviewViewController = segue.sourceViewController as? ReviewViewController {
+            if let rating = reviewViewController.rating {
+                restaurant.rating = rating
+                ratingButton.setImage(UIImage(named: rating), forState: UIControlState.Normal)
+                
+                if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+                    
+                    do {
+                        try managedObjectContext.save()
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destinationViewController as! MapViewController
+            destinationController.restaurant = restaurant
+        }
+    }
+    
+
 }
