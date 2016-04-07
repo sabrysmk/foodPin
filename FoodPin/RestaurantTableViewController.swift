@@ -10,6 +10,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Adding a search bar
         searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar
@@ -166,6 +167,24 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         } else {
             return true
         }
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+        
+        if hasViewedWalkthrough {
+            return
+        }
+        
+        if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("WalkthroughController") as? WalkthroughPageViewController {
+            
+            presentViewController(pageViewController, animated: true, completion: nil)
+        }
+        
     }
 
     
