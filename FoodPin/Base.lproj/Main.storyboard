@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="ANd-Xt-UAp" customClass="AddRestaurantController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yKE-gG-LF8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -182,9 +182,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAVE YOU BEEN HERE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amt-cI-lx6">
-                                                    <rect key="frame" x="15" y="13" width="183" height="21"/>
+                                                    <rect key="frame" x="15" y="13" width="190" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="183" id="6e9-cH-qxx"/>
+                                                        <constraint firstAttribute="width" constant="190" id="6e9-cH-qxx"/>
                                                         <constraint firstAttribute="height" constant="21" id="pQ2-Fy-hZq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -193,7 +193,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPa-I9-ruY">
                                                     <rect key="frame" x="15" y="37" width="52" height="26"/>
-                                                    <color key="backgroundColor" red="0.92156862745098034" green="0.28627450980392155" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="52" id="1iZ-LL-FD7"/>
                                                     </constraints>
@@ -201,6 +201,11 @@
                                                     <state key="normal" title="YES">
                                                         <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="toggleBeenHereButton:" destination="ANd-Xt-UAp" eventType="touchUpInside" id="q9r-zy-AYW"/>
                                                     </connections>
@@ -215,6 +220,11 @@
                                                     <state key="normal" title="NO">
                                                         <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="toggleBeenHereButton:" destination="ANd-Xt-UAp" eventType="touchUpInside" id="UpY-pE-nNN"/>
                                                     </connections>
@@ -255,6 +265,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="imageView" destination="C9J-Le-6MA" id="Rbd-er-fDL"/>
                         <outlet property="locationTextField" destination="csv-ur-tCB" id="ja4-7N-PDt"/>
@@ -358,7 +370,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwA-zD-SVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="341"/>
+            <point key="canvasLocation" x="1887" y="410"/>
         </scene>
         <!--Walkthrough Content View Controller-->
         <scene sceneID="Xwn-h3-RGh">
