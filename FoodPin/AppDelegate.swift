@@ -20,13 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = UIColor(red: 242.0/255.0, green: 116.0/255.0, blue: 119.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-
+        
         if let barFont = UIFont(name: "Avenir-Light", size: 24.0) {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
         }
         
         // Change the status bar's appearance
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        // Change the appearance of the tab bar
+        UITabBar.appearance().tintColor = UIColor(red: 244.0/255.0, green: 136.0/255.0, blue: 139.0/255.0, alpha: 1.0)
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
         
         return true
     }
