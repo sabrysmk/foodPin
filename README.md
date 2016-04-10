@@ -23,5 +23,6 @@ Food app that allows me to save my favourite restaurants.
 * 3D-touch adopted
 
 # Overview
-![Overview](http://i.imgur.com/IoTqOXP.gifv)
+<img src="http://i.imgur.com/IoTqOXP.gifv" width="250">
+<!--![Overview](http://i.imgur.com/IoTqOXP.gifv)-->
 
